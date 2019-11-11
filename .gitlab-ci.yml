@@ -1,0 +1,43 @@
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - test
+  - release
+
+before_script:
+  - yarn
+
+test:node:6:
+  image: node:6
+  stage: test
+  script:
+    - yarn test
+
+test:node:8:
+  image: node:8
+  stage: test
+  script:
+    - yarn test
+
+test:node:10:
+  image: node:10
+  stage: test
+  script:
+    - yarn test
+
+test:node:12:
+  image: node:12
+  stage: test
+  script:
+    - yarn test
+
+release:
+  image: node:12
+  only:
+    - master
+  stage: release
+  script:
+    - git remote set-url origin https://github.com/flotwig/js-refrigerator.git
+    - yarn release
