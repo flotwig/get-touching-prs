@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import c from 'chalk'
 import minimist from 'minimist'
 import { getTouchingPrs } from './'
