@@ -77,8 +77,6 @@ type ConflictingFile = {
 export function getTouchingPrs(owner: string, repo: string, ghToken: string, patterns: string[]): Promise<TouchingPr[]> {
   return requestTouchingPrs(owner, repo, ghToken)
   .then((prs) => {
-    console.log(JSON.stringify(prs.data, null, 2))
-
     const touchingPrs: TouchingPr[] = []
 
     for(const i in prs.data.repository.pullRequests.nodes) {
@@ -106,8 +104,6 @@ export function getTouchingPrs(owner: string, repo: string, ghToken: string, pat
         touchingPrs.push(touchingPr)
       }
     }
-
-    console.log(JSON.stringify(touchingPrs, null, 2))
 
     return touchingPrs
   })
