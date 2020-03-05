@@ -3,7 +3,7 @@
   "version": "0.0.0-development",
   "description": "A module + CLI tool that helps you find open GitHub pull requests that modify certain files.",
   "main": "src/index",
-  "bin": "src/bin",
+  "bin": "src/bin.js",
   "repository": "https://github.com/flotwig/get-touching-prs",
   "author": "Zach Bloomquist <zach@bloomqu.ist>",
   "license": "MIT",
