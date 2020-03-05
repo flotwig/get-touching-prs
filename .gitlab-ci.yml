@@ -13,13 +13,13 @@ test:node:10:
   image: node:10
   stage: test
   script:
-    - yarn start --owner flotwig --repo get-touching-prs '**/*'
+    - yarn start
 
 test:node:12:
   image: node:12
   stage: test
   script:
-    - yarn start --owner flotwig --repo get-touching-prs '**/*'
+    - yarn start
 
 release:
   image: node:12
