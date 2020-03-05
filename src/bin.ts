@@ -6,13 +6,13 @@ import { getTouchingPrs } from './'
 
 const log = console.log
 
-const { owner, repo, _: varArgs } = minimist(process.argv, {
+const { owner, repo, _: varArgs } = minimist(process.argv.slice(2), {
   string: ['owner', 'repo'],
 })
 
 const ghToken = process.env.GITHUB_TOKEN
 
-const patterns = varArgs.slice(2).map(s => s.replace(/^['"]([^'"]*)['"]$/, '$1'))
+const patterns = varArgs.map(s => s.replace(/^['"]([^'"]*)['"]$/, '$1'))
 
 const printUsage = () => {
   log('Outputs a list of PRs with changed files matching the passed globs.')
@@ -24,7 +24,7 @@ const printUsage = () => {
 
 if (!owner && !repo && !patterns.length) {
   printUsage()
-  process.exit(1)
+  process.exit(0)
 }
 
 Promise.resolve()
