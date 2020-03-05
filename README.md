@@ -9,7 +9,9 @@
 ## Installation
 
 ```shell
-npm i --save get-touching-prs
+npm i -g get-touching-prs
+## or
+yarn global add get-touching-prs
 ```
 
 ## Usage (CLI)
