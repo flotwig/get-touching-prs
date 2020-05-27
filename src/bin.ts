@@ -66,7 +66,7 @@ Promise.resolve()
   })
 })
 .catch((err) => {
-  console.error(err.message)
+  console.error(c.red(err.message))
 
   printUsage()
   process.exit(1)
