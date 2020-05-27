@@ -60,8 +60,8 @@ Promise.resolve()
   touchingPrs.forEach(({ title, conflicts, author, permalink }) => {
     log(` - ${title} - @${author} - ${c.blue(permalink)}`)
     log(`   Potentially conflicting files: ${conflicts.length}`)
-    conflicts.forEach(({ matchedPath, prPath }) => {
-      log(`    - ${c.green(prPath)} differs, matching glob ${c.magenta(matchedPath)}`)
+    conflicts.forEach(({ matchedPath, file }) => {
+      log(`    - ${c.green(file.path)} (${c.green(`+${file.additions}`)}, ${c.red(`-${file.deletions}`)}) matching glob ${c.magenta(matchedPath)}`)
     })
   })
 })

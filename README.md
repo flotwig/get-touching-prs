@@ -36,8 +36,8 @@ Excerpt from output:
 39 PRs touching the supplied patterns were found in cypress-io/cypress:
  - render ansi colors for file:preprocessor error message - @Bkucera - https://github.com/cypress-io/cypress/pull/6535
    Potentially conflicting files: 2
-    - packages/server/lib/plugins/preprocessor.coffee differs, matching glob **/*.coffee
-    - packages/server/test/unit/plugins/preprocessor_spec.coffee differs, matching glob **/*.coffee
+    - packages/server/lib/plugins/preprocessor.coffee (+4, -3) matching glob **/*.coffee
+    - packages/server/test/unit/plugins/preprocessor_spec.coffee (+1, -1) matching glob **/*.coffee
 ...
 ```
 

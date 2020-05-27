@@ -30,6 +30,8 @@ type PullRequest = {
 
 type PullRequestChangedFile = {
   path: string
+  additions: number
+  deletions: number
 }
 
 export function requestTouchingPrs(owner: string, repo: string, ghToken: string): Promise<RequestTouchingPrsResponse> {
@@ -71,7 +73,7 @@ type TouchingPr = {
 
 type ConflictingFile = {
   matchedPath: string
-  prPath: string
+  file: PullRequestChangedFile
 }
 
 export function getTouchingPrs(owner: string, repo: string, ghToken: string, patterns: string[]): Promise<TouchingPr[]> {
@@ -95,7 +97,7 @@ export function getTouchingPrs(owner: string, repo: string, ghToken: string, pat
 
         patterns.forEach(pattern => {
           if(minimatch(file.path, pattern)) {
-            touchingPr.conflicts.push({ matchedPath: pattern, prPath: file.path})
+            touchingPr.conflicts.push({ matchedPath: pattern, file })
           }
         })
       }

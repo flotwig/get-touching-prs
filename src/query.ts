@@ -12,6 +12,8 @@ export function getQuery(owner: string, repo: string, first: number) {
           files(first: 100) {
             nodes {
               path
+              additions
+              deletions
             }
             pageInfo {
               hasNextPage
